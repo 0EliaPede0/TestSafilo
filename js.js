@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     giri = 3;
     // startSlide(2);
 
-    startSlideDue(0);
+    startSlideDue(1);
 });
 
 function startSlide(numeroAttuale) {
