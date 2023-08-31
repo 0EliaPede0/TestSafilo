@@ -1,3 +1,4 @@
+let contatore = 0;
 let giri = {};
 let timer = 5000;
 
@@ -11,7 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // giri = document.getElementsByClassName("gira");
     giri = 3;
     // startSlide(2);
-    startSlideDue(2);
+
+    startSlideDue(0);
 });
 
 function startSlide(numeroAttuale) {
@@ -37,27 +39,17 @@ function startSlide(numeroAttuale) {
 
 function startSlideDue(numeroAttuale) {
     setTimeout(() => {
-        let elemntiGruppo = document.getElementsByClassName("gira" + (numeroAttuale - 1));
+        let elemntiGruppo = document.getElementsByClassName("gira");
+        contatore = elemntiGruppo.length;
         for (let index = 0; index < elemntiGruppo.length; index++) {
             elemntiGruppo[index].setAttribute("hidden", "");
         }
-        elemntiGruppo = document.getElementsByClassName("gira" + numeroAttuale);
-        for (let index = 0; index < elemntiGruppo.length; index++) {
-            elemntiGruppo[index].removeAttribute("hidden", "");
-        }
-        if (numeroAttuale != giri) {
+        elemntiGruppo[numeroAttuale].removeAttribute("hidden", "");
+        if (numeroAttuale != contatore - 1) {
             startSlideDue(numeroAttuale + 1);
         }
         else {
-            let elemntiGruppo = document.getElementsByTagName("iframe");
-            for (let index = 0; index < elemntiGruppo.length; index++) {
-                elemntiGruppo[index].setAttribute("hidden", "");
-            }
-            elemntiGruppo[0].removeAttribute("hidden");
-            startSlideDue(2);
-            // setTimeout(() => {
-            //     window.location.reload();
-            // }, timer);
+            startSlideDue(0);
         }
     }, timer);
 }
