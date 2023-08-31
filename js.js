@@ -1,5 +1,5 @@
 let giri = {};
-let timer = 6000;
+let timer = 2000;
 
 // let siti = [
 //     "https://sun.fedabo.com/Home/TestSafiloPUno",
