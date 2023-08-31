@@ -46,14 +46,15 @@ function startSlideDue(numeroAttuale) {
             elemntiGruppo[index].removeAttribute("hidden", "");
         }
         if (numeroAttuale != giri) {
-            startSlide(numeroAttuale + 1);
+            startSlideDue(numeroAttuale + 1);
         }
         else {
             let elemntiGruppo = document.getElementsByTagName("iframe");
             for (let index = 0; index < elemntiGruppo.length; index++) {
                 elemntiGruppo[index].setAttribute("hidden", "");
             }
-            startSlide(2);
+            elemntiGruppo[0].removeAttribute("hidden");
+            startSlideDue(2);
             // setTimeout(() => {
             //     window.location.reload();
             // }, timer);
